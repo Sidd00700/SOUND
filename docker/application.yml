@@ -59,14 +59,19 @@ logging:
   level:
     root: INFO
     lavalink: INFO
+    dev.lavalink.youtube: DEBUG
 
-youtube:
-  enabled: true
-  allowSearch: true
-  allowDirectVideoIds: true
-  allowDirectPlaylistIds: true
-  clients:
-    - MUSIC
-    - WEB
-    - ANDROID_TESTSUITE
-    - TVHTML5EMBEDDED
+plugins:
+  youtube:
+    enabled: true
+    allowSearch: true
+    allowDirectVideoIds: true
+    allowDirectPlaylistIds: true
+    clients:
+      - M_WEB
+      - WEB
+      - MUSIC
+      - WEBEMBEDDED
+      - ANDROID_VR
+      - TV
+      - TVHTML5EMBEDDED
