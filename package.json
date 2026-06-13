@@ -12,6 +12,7 @@
   "dependencies": {
     "@discordjs/voice": "^0.18.0",
     "@distube/youtube": "^1.0.4",
+    "@snazzah/davey": "^0.1.11",
     "discord.js": "^14.26.4",
     "distube": "^5.1.2",
     "dotenv": "^17.4.2",
