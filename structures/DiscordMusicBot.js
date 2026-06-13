@@ -106,7 +106,7 @@ class DiscordMusicBot extends Client {
       };
 
       let cmd = client.commands.get(command);
-      if (cmd.SlashCommand && cmd.SlashCommand.run)
+      if (cmd && cmd.SlashCommand && cmd.SlashCommand.run)
         cmd.SlashCommand.run(this, interaction, args, { GuildDB });
     });
 
