@@ -2,10 +2,13 @@ server: # REST and WS server
   port: 2333
   address: 0.0.0.0
 lavalink:
+  plugins:
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.18.1"
+      repository: "https://maven.lavalink.dev/releases"
   server:
     password: "bonsoirDocker"
     sources:
-      youtube: true
+      youtube: false
       bandcamp: true
       soundcloud: true
       twitch: true
@@ -56,3 +59,14 @@ logging:
   level:
     root: INFO
     lavalink: INFO
+
+youtube:
+  enabled: true
+  allowSearch: true
+  allowDirectVideoIds: true
+  allowDirectPlaylistIds: true
+  clients:
+    - MUSIC
+    - WEB
+    - ANDROID_TESTSUITE
+    - TVHTML5EMBEDDED
