@@ -3,6 +3,8 @@ const { Client, GatewayIntentBits, EmbedBuilder, ActivityType } = require("disco
 const { DisTube } = require("distube");
 const { YouTubePlugin } = require("@distube/youtube");
 
+const ffmpegPath = require("ffmpeg-static");
+
 if (!process.env.Token) {
   console.error("Error: Token is missing in .env file!");
   process.exit(1);
@@ -26,6 +28,9 @@ const distube = new DisTube(client, {
     }),
   ],
   emitNewSongOnly: true,
+  ffmpeg: {
+    path: ffmpegPath,
+  },
 });
 
 // Presence & Slash Command Definitions
