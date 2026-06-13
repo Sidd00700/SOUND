@@ -154,11 +154,12 @@ class DiscordMusicBot extends Client {
       .on("nodeConnect", (node) =>
         this.log(`Lavalink: Node ${node.options.identifier} connected`)
       )
-      .on("nodeError", (node, error) =>
+      .on("nodeError", (node, error) => {
+        if (error.message.includes("Unexpected op \"ready\"")) return;
         this.log(
           `Lavalink: Node ${node.options.identifier} had an error: ${error.message}`
-        )
-      )
+        );
+      })
       .on("trackStart", async (player, track) => {
         this.SongsPlayed++;
         let TrackStartedEmbed = new MessageEmbed()
